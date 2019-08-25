@@ -152,6 +152,121 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hexo-博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/22/hexo-博客搭建/">hexo 博客搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/22/hexo-博客搭建/" class="archive-article-date">
+  	<time datetime="2019-08-22T06:14:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、事前准备"><a href="#一、事前准备" class="headerlink" title="一、事前准备"></a>一、事前准备</h4><ul>
+<li>node.js下载安装(LTS)<br> 下载地址:nodejs.org</li>
+<li>git安装配置环境变量</li>
+<li>git Bash身份验证(用户名密码登陆)<br>github -conifg <h4 id="二、hexo安装"><a href="#二、hexo安装" class="headerlink" title="二、hexo安装"></a>二、hexo安装</h4><ol>
+<li>切换镜像源(国内)<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
+<li>安装hexo<br>cnpm install -g hexo-cli</li>
+<li>命令验证<br>hexo -v</li>
+</ol>
+</li>
+</ul>
+<h4 id="三、博客初始化生成"><a href="#三、博客初始化生成" class="headerlink" title="三、博客初始化生成"></a>三、博客初始化生成</h4><ol>
+<li>创建博客文件夹目录blog</li>
+<li>进去blog目录</li>
+<li>生成初始化博客(管理员用户)<br>hexo init</li>
+<li>启动博客<br>hexo server (简写 hexo s)</li>
+</ol>
+<h4 id="四、博客操作"><a href="#四、博客操作" class="headerlink" title="四、博客操作"></a>四、博客操作</h4><ol>
+<li>新建博客<br>hexo new “博客名”</li>
+<li>目录下查看博客内容<br>source/_posts/XXXX.md</li>
+<li>hexo 清理<br>hexo clean</li>
+<li>hexo 本地生成<br>hexo g</li>
+</ol>
+<h4 id="五、GitHub远端部署博客"><a href="#五、GitHub远端部署博客" class="headerlink" title="五、GitHub远端部署博客"></a>五、GitHub远端部署博客</h4><ol>
+<li>登陆GitHub账号</li>
+<li>GitHub新建仓库</li>
+<li>blog 目录下安装GitHub插件<br>cnpm install –save hexo-deployer-git</li>
+<li>配置 _config.yml配置文件</li>
+</ol>
+<ul>
+<li>修改blog目录下 _config.yml文件<blockquote>
+<p># Deployment<br>## Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a><br>deploy:<br>  type: git<br> repo: <a href="https://github.com/Lxw121314/Lxw121314.github.io(操作3创建GitHub仓库的地址)" target="_blank" rel="noopener">https://github.com/Lxw121314/Lxw121314.github.io(操作3创建GitHub仓库的地址)</a><br> branch: master</p>
+</blockquote>
+</li>
+</ul>
+<ol start="5">
+<li>部署远端(执行过程需要输入GitHub的账号密码)<br>hexo d </li>
+<li>浏览器访问GitHub仓库名,部署成功</li>
+</ol>
+<h4 id="六、样式主题自定义"><a href="#六、样式主题自定义" class="headerlink" title="六、样式主题自定义"></a>六、样式主题自定义</h4><ol>
+<li>推荐主题(<a href="https://gitHub.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://gitHub.com/litten/hexo-theme-yilia</a>)</li>
+<li>下载主题<br>git clone <a href="https://gitHub.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://gitHub.com/litten/hexo-theme-yilia.git</a> theme/yilia</li>
+<li>配置 _config.yml配置文件</li>
+</ol>
+<ul>
+<li>修改blog目录下 _config.yml文件<blockquote>
+<p># Extensions<br>## Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a><br>## Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>theme: yilia</p>
+</blockquote>
+</li>
+</ul>
+<ol start="4">
+<li>hexo clean</li>
+<li>hexo d 远程部署</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/22/hexo-博客搭建/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
