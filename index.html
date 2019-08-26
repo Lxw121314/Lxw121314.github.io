@@ -203,12 +203,12 @@
 <li>子组件中需要以某种方式例如点击事件的方法来触发一个自定义事件</li>
 <li>将需要传的值作为$emit的第二个参数，该值将作为实参传给响应自定义事件的方法</li>
 <li>在父组件中注册子组件并在子组件标签上绑定对自定义事件的监听</li>
-<li>在通信中，无论是子组件向父组件传值还是父组件向子组件传值,他们都有一个共同点就是有中间介质，子向父的介质是自定义事件，父向子的介质是props中的属性。<h4 id="子组件和父组件之间的通信"><a href="#子组件和父组件之间的通信" class="headerlink" title="子组件和父组件之间的通信"></a>子组件和父组件之间的通信</h4></li>
+<li>在通信中，无论是子组件向父组件传值还是父组件向子组件传值,他们都有一个共同点就是有中间介质，子向父的介质是自定义事件，父向子的介质是props中的属性。<h4 id="子组件和父组件之间的通信"><a href="#子组件和父组件之间的通信" class="headerlink" title="子组件和父组件之间的通信"></a>子组件和父组件之间的通信</h4><img src="/2019/08/25/vue-组件/%E7%88%B6%E7%BB%84%E4%BB%B6%E5%92%8C%E5%AD%90%E7%BB%84%E4%BB%B6.png" alt="父组件和子组件"></li>
 </ul>
 </li>
 </ol>
 <ul>
-<li>!父组件和<a href="vue-组件/父组件和子组件.png">子组件</a><br>点击&quot;+&quot;按钮,触发click事件传递一个+1的值给handleIncrement(),同时通过<em>$emit</em>发布一个自定义事件numChage传递数据.<br>父组件中使用子组件同时使用该自定义事件(接收到数据),调用handleNumberChange方法处理接收到的数据.<br>父组件处理完的数据count再通过子组件中的props传递给子组件,子组件接收到数据count作为值显示在input文本里.<br>####组件的v-mode</li>
+<li>点击&quot;+&quot;按钮,触发click事件传递一个+1的值给handleIncrement(),同时通过<em>$emit</em>发布一个自定义事件numChage传递数据.父组件中使用子组件同时使用该自定义事件(接收到数据),调用handleNumberChange方法处理接收到的数据.父组件处理完的数据count再通过子组件中的props传递给子组件,子组件接收到数据count作为值显示在input文本里.<br>####组件的v-mode<br>当v-model用于组件的时候,实际上相当于(两步操作):<br>v-bind:value=”count” //默认传递一个属性名字叫value的props数据<br>v-on:input=”e =&gt; count = e.target.value”<br>//默认监听组件内部的input事件,修改绑定的数据<br><img src="/2019/08/25/vue-组件/v-model.png" alt="父组件和子组件"></li>
 </ul>
 
       
