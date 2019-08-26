@@ -8,19 +8,26 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue-组件 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="组件化开发组件的注册 组件模板template:``模板只有一个根节点  组件的data(必须是函数)  全局注册和局部注册  局部注册  声明定义一个组件  再在vue实例中通过components选项注册使用组件        全局注册 直接通过Vue.component来创建组件 vue实例中注册    组件的调用(当作标签用)组件的通信 父传子 Props DOWN 子传父 Events">
+  <meta name="description" content="组件化开发组件的注册 组件模板template:``模板只有一个根节点 组件的data(必须是函数) 全局注册和局部注册 局部注册 声明var ComponentA来定义注册一个组件 再在vue实例中通过components选项调用组件   全局注册 直接通过Vue.component来创建注册组件 vue根实例的模板中调用(当作标签用)      组件的通信父传子 Props DOWN 父组件传">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-组件">
 <meta property="og:url" content="http://yoursite.com/2019/08/25/vue-组件/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="组件化开发组件的注册 组件模板template:``模板只有一个根节点  组件的data(必须是函数)  全局注册和局部注册  局部注册  声明定义一个组件  再在vue实例中通过components选项注册使用组件        全局注册 直接通过Vue.component来创建组件 vue实例中注册    组件的调用(当作标签用)组件的通信 父传子 Props DOWN 子传父 Events">
+<meta property="og:description" content="组件化开发组件的注册 组件模板template:``模板只有一个根节点 组件的data(必须是函数) 全局注册和局部注册 局部注册 声明var ComponentA来定义注册一个组件 再在vue实例中通过components选项调用组件   全局注册 直接通过Vue.component来创建注册组件 vue根实例的模板中调用(当作标签用)      组件的通信父传子 Props DOWN 父组件传">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png">
-<meta property="og:updated_time" content="2019-08-26T08:53:16.032Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%AD%90%E7%BB%84%E4%BB%B6%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/vue-组件/%E7%88%B6%E7%BB%84%E4%BB%B6%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE.png">
+<meta property="og:updated_time" content="2019-08-26T13:33:20.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-组件">
-<meta name="twitter:description" content="组件化开发组件的注册 组件模板template:``模板只有一个根节点  组件的data(必须是函数)  全局注册和局部注册  局部注册  声明定义一个组件  再在vue实例中通过components选项注册使用组件        全局注册 直接通过Vue.component来创建组件 vue实例中注册    组件的调用(当作标签用)组件的通信 父传子 Props DOWN 子传父 Events">
+<meta name="twitter:description" content="组件化开发组件的注册 组件模板template:``模板只有一个根节点 组件的data(必须是函数) 全局注册和局部注册 局部注册 声明var ComponentA来定义注册一个组件 再在vue实例中通过components选项调用组件   全局注册 直接通过Vue.component来创建注册组件 vue根实例的模板中调用(当作标签用)      组件的通信父传子 Props DOWN 父组件传">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -178,33 +185,42 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h4><h4 id="组件的注册"><a href="#组件的注册" class="headerlink" title="组件的注册"></a>组件的注册</h4><ul>
-<li><p>组件模板template:``<br>模板只有一个根节点</p>
-</li>
-<li><p>组件的data(必须是函数)</p>
-</li>
-<li><p>全局注册和局部注册</p>
-<ul>
-<li><p>局部注册</p>
-<ol>
-<li><p>声明定义一个组件<br><img src="/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png" alt="局部注册定义组件"></p>
-</li>
-<li><p>再在vue实例中通过<em>components</em>选项注册使用组件</p>
-</li>
+<li>组件模板template:``<br>模板只有一个根节点</li>
+<li>组件的data(必须是函数)</li>
+<li>全局注册和局部注册<ul>
+<li>局部注册<ol>
+<li>声明<em>var ComponentA</em>来定义注册一个组件<br><img src="/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png" alt="局部注册定义组件"></li>
+<li>再在vue实例中通过<em>components</em>选项调用组件<br><img src="/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png" alt="局部注册使用组件"></li>
 </ol>
 </li>
-</ul>
-</li>
-</ul>
-<ul>
 <li>全局注册<ol>
-<li>直接通过Vue.component来创建组件</li>
-<li>vue实例中注册</li>
+<li>直接通过<em>Vue.component</em>来创建注册组件<br><img src="/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png" alt="全局注册定义组件"></li>
+<li>vue根实例的模板中调用<em>(当作标签用)</em><br><img src="/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png" alt="全局注册定义组件"></li>
 </ol>
 </li>
 </ul>
-<h4 id="组件的调用-当作标签用"><a href="#组件的调用-当作标签用" class="headerlink" title="组件的调用(当作标签用)"></a>组件的调用(当作标签用)</h4><h4 id="组件的通信"><a href="#组件的通信" class="headerlink" title="组件的通信"></a>组件的通信</h4><ul>
-<li>父传子 Props DOWN</li>
-<li>子传父 Events Up</li>
+</li>
+</ul>
+<h3 id="组件的通信"><a href="#组件的通信" class="headerlink" title="组件的通信"></a>组件的通信</h3><h4 id="父传子-Props-DOWN"><a href="#父传子-Props-DOWN" class="headerlink" title="父传子 Props DOWN"></a>父传子 Props DOWN</h4><ol>
+<li>父组件传递数据(传递数据给子组件)<br><img src="/2019/08/25/vue-组件/%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE.png" alt="父组件传递数据"></li>
+<li>子组件接收数据<br>通过给子组件创建<em>props(props:[“value”])</em>,作为介质接收数据<br><img src="/2019/08/25/vue-组件/%E5%AD%90%E7%BB%84%E4%BB%B6%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE.png" alt="子组件接收数据"><br>Prop:只能单向的给子组件传递数据<br>总结:<ul>
+<li>子组件在props中创建一个属性，用以接收父组件传过来的值</li>
+<li>父组件中注册子组件</li>
+<li>在子组件标签中添加子组件props中创建的属性</li>
+<li>把需要传给子组件的值赋给该属性<h4 id="子传父-Events-Up"><a href="#子传父-Events-Up" class="headerlink" title="子传父 Events Up"></a>子传父 Events Up</h4></li>
+</ul>
+</li>
+<li>子组件传递数据(刚从父组件那里接收到的数据),<br>通过给子组件使用<em>$emit</em>触发一个自定义事件,并传递参数(数据)给父组件<br><img src="/2019/08/25/vue-组件/%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE.png" alt="子组件传递数据"></li>
+<li>父组件接收数据<br>在子组件标签里面监听自动事件并添加一个响应处理该事件的方法<br><img src="/2019/08/25/vue-组件/%E7%88%B6%E7%BB%84%E4%BB%B6%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE.png" alt="父组件接收数据"><br>总结:<ul>
+<li>子组件中需要以某种方式例如点击事件的方法来触发一个自定义事件</li>
+<li>将需要传的值作为$emit的第二个参数，该值将作为实参传给响应自定义事件的方法</li>
+<li>在父组件中注册子组件并在子组件标签上绑定对自定义事件的监听</li>
+<li>在通信中，无论是子组件向父组件传值还是父组件向子组件传值,他们都有一个共同点就是有中间介质，子向父的介质是自定义事件，父向子的介质是props中的属性。<h4 id="子组件和父组件之间的通信"><a href="#子组件和父组件之间的通信" class="headerlink" title="子组件和父组件之间的通信"></a>子组件和父组件之间的通信</h4></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>!父组件和<a href="vue-组件/父组件和子组件.png">子组件</a><br>点击&quot;+&quot;按钮,触发click事件传递一个+1的值给handleIncrement(),同时通过<em>$emit</em>发布一个自定义事件numChage传递数据.<br>父组件中使用子组件同时使用该自定义事件(接收到数据),调用handleNumberChange方法处理接收到的数据.<br>父组件处理完的数据count再通过子组件中的props传递给子组件,子组件接收到数据count作为值显示在input文本里.<br>####组件的v-mode</li>
 </ul>
 
       
