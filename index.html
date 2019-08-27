@@ -173,17 +173,23 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h4><h4 id="组件的注册"><a href="#组件的注册" class="headerlink" title="组件的注册"></a>组件的注册</h4><ul>
-<li>组件模板template:``<br>模板只有一个根节点</li>
-<li>组件的data(必须是函数)</li>
-<li>全局注册和局部注册<ul>
-<li>局部注册<ol>
+<li><p>组件模板template:``<br>模板只有一个根节点</p>
+</li>
+<li><p>组件的data(必须是函数)</p>
+</li>
+<li><p>全局注册和局部注册</p>
+<ul>
+<li><p>局部注册</p>
+<ol>
 <li>声明<em>var ComponentA</em>来定义注册一个组件<br><img src="/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png" alt="局部注册定义组件"></li>
-<li>再在vue实例中通过<em>components</em>选项调用组件<br><img src="/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png" alt="局部注册使用组件"></li>
+<li>再在vue实例中通过<em>components</em>选项定义属性名调用组件</li>
+<li><em>components</em>定义的属性名作为标签使用组件<br><img src="/2019/08/25/vue-组件/%E5%B1%80%E9%83%A8%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png" alt="局部注册使用组件"></li>
 </ol>
 </li>
-<li>全局注册<ol>
+<li><p>全局注册</p>
+<ol>
 <li>直接通过<em>Vue.component</em>来创建注册组件<br><img src="/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E5%AE%9A%E4%B9%89.png" alt="全局注册定义组件"></li>
-<li>vue根实例的模板中调用<em>(当作标签用)</em><br><img src="/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png" alt="全局注册定义组件"></li>
+<li>直接在vue根实例的模板中使用组件<em>(直接当作标签用)</em><br><img src="/2019/08/25/vue-组件/%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C-%E4%BD%BF%E7%94%A8.png" alt="全局注册定义组件"></li>
 </ol>
 </li>
 </ul>
@@ -213,6 +219,19 @@
 <li>点击&quot;+&quot;按钮,触发click事件传递一个+1的值给handleIncrement(),同时通过<em>$emit</em>发布一个自定义事件numChage传递数据.父组件中使用子组件同时使用该自定义事件(接收到数据),调用handleNumberChange方法处理接收到的数据.父组件处理完的数据count再通过子组件中的props传递给子组件,子组件接收到数据count作为值显示在input文本里.</li>
 </ul>
 <p>####组件的v-mode<br>   当v-model用于组件的时候,实际上相当于(两步操作):<br>   v-bind:value=”count” //默认传递一个属性名字叫value的props数据<br>   v-on:input=”e =&gt; count = e.target.value”<br>   //默认监听组件内部的input事件,修改绑定的数据<br>    e.target.value 点击事件绑定元素input的值<br>    <img src="/2019/08/25/vue-组件/v-model.png" alt="父组件和子组件"></p>
+<p>###组件的插槽</p>
+<!--slot 就是插槽的意思 子组件默认会把父组件里的内容(子组件标签里的内容)渲染到这里 将内容插入到组件模板中-->
+<p>####匿名插槽<br>在子组件需要插内容的地方添加*<slot></slot>*标签,父组件里调用子组件,并给子组件添加的内容会渲染到这里,如下:<br>    <img src="/2019/08/25/vue-组件/%E6%8F%92%E6%A7%BD%E7%88%B6%E7%BB%84%E4%BB%B6%E5%92%8C%E5%AD%90%E7%A7%9F%E9%87%91.png" alt="父组件和子组件"><br>显示结果:<br>    <img src="/2019/08/25/vue-组件/%E7%BB%93%E6%9E%9C.png" alt="父组件和子组件"><br>html渲染结果:<br>    <img src="/2019/08/25/vue-组件/%E6%B8%B2%E6%9F%93html.png" alt="父组件和子组件"></p>
+<p>####具名插槽<br>给slot添加一个name,父元素再<template>或者是组件标签里面添加v-slot:name<br>指定父组件(name)里面内容渲染到子组件slot(name)处,如下:<br>    <img src="/2019/08/25/vue-组件/%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD.png" alt="父组件和子组件"><br>显示结果:<br>    <img src="/2019/08/25/vue-组件/%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD%E7%BB%93%E6%9E%9C.png" alt="父组件和子组件"><br>html渲染结果<br>    <img src="/2019/08/25/vue-组件/%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD%E6%B8%B2%E6%9F%93%E7%BB%93%E6%9E%9C.png" alt="父组件和子组件"><br>注:</template></p>
+<ol>
+<li>不带 name 的 <slot> 出口会带有隐含的名字“default”。</slot></li>
+<li>v-slot缩写# 例如:v-slot:header 可以被重写为 #header<blockquote>
+<p>&lt;template #header&gt;</p>
+<h2>来着父组件内容</h2>
+
+</blockquote>
+</li>
+</ol>
 
       
 
